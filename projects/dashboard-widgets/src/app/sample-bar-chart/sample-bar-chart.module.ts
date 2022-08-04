@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SampleBarChartComponent } from './components/sample-bar-chart.component';
 import { RouterModule } from '@angular/router';
 import { DashboardCoreModule } from 'projects/@core/dashboard-core.module';
+import { BarChartComponent } from 'projects/@core/components/bar-chart/bar-chart.component';
 
 const routes = [
   {
@@ -14,6 +15,6 @@ const routes = [
 @NgModule({
   declarations: [SampleBarChartComponent],
   imports: [RouterModule.forChild(routes), CommonModule, DashboardCoreModule],
-  exports: [SampleBarChartComponent],
+  exports: [SampleBarChartComponent, BarChartComponent],
 })
-export class SampleBarChartModule {}
+export class SampleBarChartModule { }
