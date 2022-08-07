@@ -9,9 +9,11 @@ module.exports = withModuleFederationPlugin({
 
   exposes: {
     "./Module":
-      "./projects/dashboard-widgets/src/app/sample-bar-chart/sample-bar-chart.module.ts",
-    "./Component":
-      "./projects/dashboard-widgets/src/app/sample-bar-chart/components/sample-bar-chart.component.ts",
+      "./projects/dashboard-widgets/src/app/widgets/widgets.module.ts",
+    "./BarChartWidget":
+      "./projects/dashboard-widgets/src/app/widgets/bar-chart-widget/bar-chart-widget.component.ts",
+    "./SearchPage":
+      "./projects/dashboard-widgets/src/app/widgets/my-search-page/my-search-page.component.ts",
   },
   shared: {
     ...shareAll({

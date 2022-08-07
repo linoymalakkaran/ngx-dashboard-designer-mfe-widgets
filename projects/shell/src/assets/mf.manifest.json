@@ -2,8 +2,8 @@
   "dashboard-widgets": {
 		"remoteEntry": "http://localhost:5203/remoteEntry.js",
 		"exposedModule": "./Module",
-		"displayName": "Chart",
-		"routePath": "sample-bar-chart",
-		"ngModuleName": "SampleBarChartModule"
+		"displayName": "Bar Chart Widget",
+		"routePath": "bar-chart",
+		"ngModuleName": "WidgetsModule"
 	}
 }
