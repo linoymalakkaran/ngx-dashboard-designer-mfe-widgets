@@ -4,14 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'sample-bar-chart',
+    redirectTo: 'widgets',
     pathMatch: 'full',
   },
   {
-    path: 'sample-bar-chart',
+    path: 'widgets',
     loadChildren: () =>
-      import('./sample-bar-chart/sample-bar-chart.module').then(
-        (m) => m.SampleBarChartModule
+      import('./widgets/widgets.module').then(
+        (m) => m.WidgetsModule
       ),
   },
 ];
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

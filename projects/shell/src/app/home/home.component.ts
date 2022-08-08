@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
     const m = await loadRemoteModule({
       type: 'module',
       remoteEntry: "http://localhost:5203/remoteEntry.js",
-      exposedModule: './Component'
+      exposedModule: './BarChartWidget'
     });
     const ref = this.viewContainer!.createComponent(
-      m['SampleBarChartComponent']
+      m['BarchartWidgetComponent']
     );
 
     // const compInstance = ref.instance;

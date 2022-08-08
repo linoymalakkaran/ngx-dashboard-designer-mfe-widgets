@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
-  selector: 'app-sample-bar-chart',
-  templateUrl: './sample-bar-chart.component.html',
-  styleUrls: ['./sample-bar-chart.component.scss'],
+  selector: 'bar-chart-widget',
+  templateUrl: './bar-chart-widget.component.html',
+  styleUrls: ['./bar-chart-widget.component.scss'],
 })
-export class SampleBarChartComponent implements OnInit {
+export class BarchartWidgetComponent implements OnInit {
   barChartData: any;
   barChartOptions: any;
   labelyColor = '#8F9AB3';
