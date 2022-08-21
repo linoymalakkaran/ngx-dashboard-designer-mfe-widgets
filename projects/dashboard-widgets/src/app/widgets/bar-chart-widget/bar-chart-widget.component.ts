@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
+import {
+  MfeEventsTypes,
+  ObservableEventsModel,
+} from '../models/observable-events.model';
 
 @Component({
   selector: 'bar-chart-widget',
@@ -12,8 +17,11 @@ export class BarchartWidgetComponent implements OnInit {
   labelyColor = '#8F9AB3';
   labelxColor = '#8E9AAF';
   chartId: string = uuidv4();
+  events$: BehaviorSubject<ObservableEventsModel>[] = [];
 
-  constructor() {}
+  constructor() {
+    this.registerEvents();
+  }
 
   ngOnInit(): void {
     this.barChartData = {
@@ -64,38 +72,68 @@ export class BarchartWidgetComponent implements OnInit {
         display: false,
       },
       scales: {
-        xAxes: [
-          {
-            ticks: {
-              fontSize: 12,
-              fontColor: this.labelxColor,
-              beginAtZero: true,
-              stepSize: 1,
-              suggestedMin: 0,
-              suggestedMax: 12,
-            },
-            // barThickness: 15,
-            // barPercentage: 0.4,
-            // categoryPercentage: 0.6,
-            gridLines: {
-              offsetGridLines: false,
-              display: false,
-            },
-          },
-        ],
-        yAxes: [
-          {
-            ticks: {
-              fontSize: 12,
-              fontColor: this.labelyColor,
-              beginAtZero: true,
-              stepSize: 40,
-              suggestedMin: 0,
-              suggestedMax: 160,
-            },
-          },
-        ],
+        // xAxes: [
+        //   {
+        //     ticks: {
+        //       fontSize: 12,
+        //       fontColor: this.labelxColor,
+        //       beginAtZero: true,
+        //       stepSize: 1,
+        //       suggestedMin: 0,
+        //       suggestedMax: 12,
+        //     },
+        //     // barThickness: 15,
+        //     // barPercentage: 0.4,
+        //     // categoryPercentage: 0.6,
+        //     gridLines: {
+        //       offsetGridLines: false,
+        //       display: false,
+        //     },
+        //   },
+        // ],
+        // yAxes: [
+        //   {
+        //     ticks: {
+        //       fontSize: 12,
+        //       fontColor: this.labelyColor,
+        //       beginAtZero: true,
+        //       stepSize: 40,
+        //       suggestedMin: 0,
+        //       suggestedMax: 160,
+        //     },
+        //   },
+        // ],
       },
     };
+  }
+
+  registerEvents() {
+    const eventModel: ObservableEventsModel = {
+      eventsType: MfeEventsTypes.LOAD_WIDGET,
+      data: null,
+    };
+    this.events$.push(new BehaviorSubject<ObservableEventsModel>(eventModel));
+  }
+
+  loadFullBarchart() {
+    const mfeWidgetProps = {
+      displayName: 'Bar Chart',
+      icon: 'bar-chart',
+      description: 'Bar Chart',
+      hostUrl:
+        'https://linoymalakkaran.github.io/ngx-dashboard-designer-demo/widgetsv13/remoteEntry.js',
+      componentName: 'BarchartWidgetComponent',
+      type: 'module',
+      exposedModule: './BarChartWidget',
+      location: {
+        x: 1,
+        y: 0,
+      },
+    };
+    const eventModel: ObservableEventsModel = {
+      eventsType: MfeEventsTypes.LOAD_WIDGET,
+      data: mfeWidgetProps,
+    };
+    this.events$[0].next(eventModel);
   }
 }

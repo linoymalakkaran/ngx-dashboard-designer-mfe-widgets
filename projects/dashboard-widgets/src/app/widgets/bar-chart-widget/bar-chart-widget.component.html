@@ -6,8 +6,10 @@
     showFooter: true
   }"
 >
-  <div Header class="widgetChildItems">Header will comes here</div>
-  <div Body class="inheritWidgetSize">
+  <div Header class="widgetChildItems" (click)="loadFullBarchart()">
+    Click here to load widget
+  </div>
+  <div Body class="inheritWidgetSize" (click)="loadFullBarchart()">
     <app-bar-chart
       [chartData]="barChartData"
       [chartId]="chartId"
