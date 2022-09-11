@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import {
@@ -18,6 +18,12 @@ export class BarchartWidgetComponent implements OnInit {
   labelxColor = '#8E9AAF';
   chartId: string = uuidv4();
   events$: BehaviorSubject<ObservableEventsModel>[] = [];
+  @Input()
+  gridData: any ={};
+  @Input()
+  getGridInstance: Function = () => {};
+  @Output()
+  loadWidget = new EventEmitter<ObservableEventsModel>();
 
   constructor() {
     this.registerEvents();
@@ -72,37 +78,6 @@ export class BarchartWidgetComponent implements OnInit {
         display: false,
       },
       scales: {
-        // xAxes: [
-        //   {
-        //     ticks: {
-        //       fontSize: 12,
-        //       fontColor: this.labelxColor,
-        //       beginAtZero: true,
-        //       stepSize: 1,
-        //       suggestedMin: 0,
-        //       suggestedMax: 12,
-        //     },
-        //     // barThickness: 15,
-        //     // barPercentage: 0.4,
-        //     // categoryPercentage: 0.6,
-        //     gridLines: {
-        //       offsetGridLines: false,
-        //       display: false,
-        //     },
-        //   },
-        // ],
-        // yAxes: [
-        //   {
-        //     ticks: {
-        //       fontSize: 12,
-        //       fontColor: this.labelyColor,
-        //       beginAtZero: true,
-        //       stepSize: 40,
-        //       suggestedMin: 0,
-        //       suggestedMax: 160,
-        //     },
-        //   },
-        // ],
       },
     };
   }
@@ -116,6 +91,7 @@ export class BarchartWidgetComponent implements OnInit {
   }
 
   loadFullBarchart() {
+    console.log("grid box info => ", this.getGridInstance());
     const mfeWidgetProps = {
       displayName: 'Bar Chart',
       icon: 'bar-chart',
@@ -125,15 +101,24 @@ export class BarchartWidgetComponent implements OnInit {
       componentName: 'BarchartWidgetComponent',
       type: 'module',
       exposedModule: './BarChartWidget',
-      location: {
-        x: 1,
-        y: 0,
-      },
+      ID: 2
+      // location: {
+      //   x: 1,
+      //   y: 0,
+      // },
     };
-    const eventModel: ObservableEventsModel = {
+    //By using output variables
+    var observableEventsModel: ObservableEventsModel = {
       eventsType: MfeEventsTypes.LOAD_WIDGET,
       data: mfeWidgetProps,
     };
-    this.events$[0].next(eventModel);
+    this.loadWidget.emit(observableEventsModel);
+
+    //By using the Observables
+    // const eventModel: ObservableEventsModel = {
+    //   eventsType: MfeEventsTypes.LOAD_WIDGET,
+    //   data: mfeWidgetProps,
+    // };
+    // this.events$[0].next(eventModel);
   }
 }
