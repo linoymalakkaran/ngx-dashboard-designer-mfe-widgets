@@ -1,0 +1,9 @@
+{
+  "dashboard-widgets": {
+		"remoteEntry": "http://localhost:5203/ATLP/EN/DASHBOARD/WIDGETS/remoteEntry.js",
+		"exposedModule": "./BarChartWidget",
+		"displayName": "Bar Chart",
+		"routePath": "bar-chart",
+		"ngModuleName": "WidgetsModule"
+	}
+}

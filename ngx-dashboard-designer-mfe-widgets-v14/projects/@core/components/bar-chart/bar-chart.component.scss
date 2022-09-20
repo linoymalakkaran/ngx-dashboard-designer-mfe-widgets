@@ -1,0 +1,32 @@
+#barChart {
+  width: 600px !important;
+  height: 300px !important;
+}
+#chartBarBig {
+  /* height: 360px; */
+}
+@media (min-width: 1024px) {
+  #chartBarBig,
+  #chartDeclarationBig,
+  #approvalsChartBig {
+    min-height: 298px;
+    padding-bottom: 30px;
+  }
+  #chartBarBig1 {
+    min-height: 312px;
+    padding-bottom: 30px;
+  }
+
+  #screenChartBig {
+    min-height: 250px;
+    padding-bottom: 30px;
+  }
+  #chartBarBigAir {
+    min-height: 241px;
+    padding-bottom: 30px;
+  }
+  #chartCargoBigAir {
+    min-height: 251px;
+    padding-bottom: 30px;
+  }
+}

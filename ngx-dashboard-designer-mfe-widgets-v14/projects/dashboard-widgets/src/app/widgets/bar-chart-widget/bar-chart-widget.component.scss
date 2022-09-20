@@ -1,0 +1,97 @@
+.dn {
+  display: none;
+}
+
+.bg-yellow {
+  background-color: #dbbf73;
+}
+
+.navigation-charts {
+  overflow-y: auto;
+}
+
+.carret-icon-colors {
+  ::ng-deep {
+    .bBack {
+      fill: white !important;
+    }
+
+    .aBack {
+      .dBack {
+        fill: #6f4c98;
+      }
+    }
+  }
+}
+
+.carret-icon-styles {
+  transform: rotate(90deg) !important;
+  @extend .carret-icon-colors;
+}
+
+.invert {
+  transform: rotate(-90deg) !important;
+  ::ng-deep {
+    .bBack {
+      fill: white !important;
+    }
+
+    .aBack {
+      .dBack {
+        fill: grey;
+      }
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.currency-title {
+  width: 23px;
+  height: 14px;
+  font-size: 12px;
+  color: red;
+  // color: map-get($color, "atlp-ink-base") !important;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.tab-info-pointer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .tab-value {
+    margin-right: 6px;
+  }
+}
+.air {
+  @media (max-width: 1023px) {
+    .time-wrapper,
+    .dashboard-header {
+      overflow-x: scroll;
+      .dashboard-nav {
+        flex-wrap: unset;
+      }
+      .nav-btn {
+        min-width: max-content;
+      }
+    }
+  }
+}
+
+
+.holder{
+  width: 500px;
+    height: 500px;
+    display: block;
+    background: #eee;
+    padding: 1rem;
+    border:1px solid #ddd;
+    margin: 2px;
+}
