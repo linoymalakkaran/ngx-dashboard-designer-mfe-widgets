@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start:shell": "ng serve shell -o",
-    "start:dashboard_widgets": "ng serve dashboard-widgets -o",
+    "start:shell": "ng serve shell",
+    "start:dashboard_widgets": "ng serve dashboard-widgets",
     "build:shell": "ng build shell --configuration production",
     "build:dashboard_widgets": "ng build dashboard-widgets --configuration production",
     "start": "concurrently \"npm run start:shell\" \"npm run start:dashboard_widgets\"",

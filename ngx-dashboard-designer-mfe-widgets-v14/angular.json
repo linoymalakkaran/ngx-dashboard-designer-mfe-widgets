@@ -18,7 +18,7 @@
           "builder": "ngx-build-plus:browser",
           "options": {
             "preserveSymlinks": true,
-            "baseHref": "/ATLP/EN/DASHBOARD/WIDGETS/SHELL/",
+            "baseHref": "/ATLP/EN/DASHBOARD/WIDGETS/V14/SHELL/",
             "outputPath": "dist/shell",
             "index": "projects/shell/src/index.html",
             "main": "projects/shell/src/main.ts",
@@ -130,7 +130,7 @@
           "builder": "ngx-build-plus:browser",
           "options": {
             "preserveSymlinks": true,
-            "baseHref": "/ATLP/EN/DASHBOARD/WIDGETS/",
+            "baseHref": "/ATLP/EN/DASHBOARD/V14/WIDGETS/",
             "outputPath": "dist/dashboard-widgets",
             "index": "projects/dashboard-widgets/src/index.html",
             "main": "projects/dashboard-widgets/src/main.ts",

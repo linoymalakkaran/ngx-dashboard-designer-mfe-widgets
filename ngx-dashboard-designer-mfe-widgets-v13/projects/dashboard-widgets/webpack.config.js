@@ -5,10 +5,10 @@ const {
 // const dependencies = require("../../package.json").dependencies;
 
 module.exports = withModuleFederationPlugin({
-  name: "dashboard_widgets",
+  name: "dashboard_widgets_13",
 
   exposes: {
-    "./WidgetsExposedModule":
+    "./WidgetsModule":
       "./projects/dashboard-widgets/src/app/widgets/widgets.module.ts",
     "./BarChartWidget":
       "./projects/dashboard-widgets/src/app/widgets/bar-chart-widget/bar-chart-widget.component.ts",

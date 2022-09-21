@@ -34,6 +34,13 @@ const routes = [
     FlexLayoutModule,
     MatIconModule,
   ],
-  exports: [BarchartWidgetComponent, BarChartComponent],
+  exports: [
+    DashboardCoreModule,
+    FlexLayoutModule,
+    MatIconModule,
+    BarchartWidgetComponent,
+    BarChartComponent,
+    MySearchPageComponent,
+  ],
 })
 export class WidgetsModule {}

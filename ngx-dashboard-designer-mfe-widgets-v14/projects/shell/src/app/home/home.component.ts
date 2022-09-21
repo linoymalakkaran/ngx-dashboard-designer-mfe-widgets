@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     const m = await loadRemoteModule({
       type: 'module',
       remoteEntry:
-        'http://localhost:7287/EN/WIDGETS/dashboard-widgets/remoteEntry.js',
+        'http://localhost:9203/ATLP/EN/DASHBOARD/WIDGETS/remoteEntry.js',
       // remoteEntry: "http://localhost:9203/ATLP/EN/DASHBOARD/WIDGETS/remoteEntry.js",
       exposedModule: './BarChartWidget',
     });
