@@ -10,7 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 
 const routes = [
-  { path: "", component: BarchartWidgetComponent, },
+  { path: '', component: BarchartWidgetComponent },
   {
     path: 'bar-chart',
     component: BarchartWidgetComponent,
@@ -28,7 +28,13 @@ const routes = [
 //AppointmentsWidgetComponent
 @NgModule({
   declarations: [BarchartWidgetComponent, MySearchPageComponent],
-  imports: [RouterModule.forChild(routes), CommonModule, DashboardCoreModule, FlexLayoutModule, MatIconModule],
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    DashboardCoreModule,
+    FlexLayoutModule,
+    MatIconModule,
+  ],
   exports: [BarchartWidgetComponent, BarChartComponent],
 })
-export class WidgetsModule { }
+export class WidgetsModule {}
