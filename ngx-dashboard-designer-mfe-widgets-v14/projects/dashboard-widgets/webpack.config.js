@@ -11,9 +11,9 @@ module.exports = withModuleFederationPlugin({
   exposes: {
     "./WidgetsModule":
       "./projects/dashboard-widgets/src/app/widgets/widgets.module.ts",
-    "./BarChartWidgetComponent":
+    "./BarChartWidget":
       "./projects/dashboard-widgets/src/app/widgets/bar-chart-widget/bar-chart-widget.component.ts",
-    "./SearchPage":
+    "./SearchPageWidget":
       "./projects/dashboard-widgets/src/app/widgets/my-search-page/my-search-page.component.ts",
   },
   shared: share({
