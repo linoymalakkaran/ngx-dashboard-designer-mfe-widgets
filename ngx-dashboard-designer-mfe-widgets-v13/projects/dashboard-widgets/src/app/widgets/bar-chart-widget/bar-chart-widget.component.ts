@@ -101,7 +101,8 @@ export class BarchartWidgetComponent implements OnInit {
       componentName: 'BarchartWidgetComponent',
       type: 'module',
       exposedModule: './BarChartWidget',
-      ID: 2
+      ID: 2,
+      isMultiLoadEnabled: true,
       // location: {
       //   x: 1,
       //   y: 0,
